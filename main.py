@@ -44,6 +44,9 @@ contract Sudoku {
 
         emit CellUpdated(row, col, value);
     }
+    function getCellValue(uint8 row, uint8 col) public view returns (uint8) {
+        require(row <= 8 && col <= 8, "Invalid input");
 
-
+        return board[row][col];
+    }
 }
